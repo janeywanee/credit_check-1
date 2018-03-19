@@ -1,4 +1,4 @@
-require 'pry'
+# require 'pry'
 class CreditCheck
   attr_reader :number
 

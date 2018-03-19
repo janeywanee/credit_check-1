@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/credit_check'
-require 'pry'
+# require 'pry'
 
 class CreditCheckTest < Minitest::Test
 
@@ -52,9 +52,9 @@ class CreditCheckTest < Minitest::Test
 
     assert cc.validate
   end
-  def test_balh
-    cc_1
-    cc_2
+  def test_it_can_check_invalid_and_valid_numbers
+    cc_1 = CreditCheck.new("5541808923795240")
+    cc_2 = CreditCheck.new("5541801923795240")
     assert cc_1.validate
     refute cc_2.validate
   end
