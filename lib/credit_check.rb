@@ -29,12 +29,10 @@ class CreditCheck
   def sum_greater_than_9
     double.map do |number|
       if number > 9
-         num_digits = number.to_s.chars.map do |num|
-           num.to_i
-         end.reduce(:+)
-       else
-         number
-       end
+        number - 9
+      else
+        number
+      end
     end
   end
 
@@ -44,18 +42,16 @@ class CreditCheck
       sum += num
     end
     sum
-    # sum_greater_than_9.reduce(0) do |sum, num|
-    #   sum + num
-    # end
   end
 
   def validate
     if sumed_digits % 10 == 0
+      puts "The number is valid!"
       return true
     else
+      puts "The card is invalid!"
       return false
     end
-
   end
 
 end
